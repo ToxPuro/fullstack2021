@@ -62,6 +62,7 @@ const App = () => {
             }, 5000)
           })
           .catch(error =>{
+            console.log(error)
             setNotification({message: `${person.name} was already removed from server`, error: true})
             setTimeout(()=>{
               setNotification(null)
@@ -84,6 +85,13 @@ const App = () => {
             setTimeout(() =>{
               setNotification(null)
             }, 5000)
+          })
+          .catch(error =>{
+            setNotification({message:error.response.data.error, error:true})
+            setTimeout(()=>{
+              setNotification(null)
+            }, 5000)
+
           })
     }
 
