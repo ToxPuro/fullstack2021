@@ -61,16 +61,13 @@ const App = () => {
               setNotification(null)
             }, 5000)
           })
-<<<<<<< HEAD
           .catch(error =>{
             console.log(error)
             setNotification({message: `${person.name} was already removed from server`, error: true})
             setTimeout(()=>{
-=======
           .catch(error => {
             setNotification({ message: `${person.name} was already removed from server`, error: true })
             setTimeout(() => {
->>>>>>> 36f6cda21ce3cc744dca41380cfe98608af20c8d
               setNotification(null)
             },5000)
             setPersons(persons.filter(person => person.name !== newName))
@@ -82,7 +79,6 @@ const App = () => {
     else{
       personService
         .create(person)
-<<<<<<< HEAD
           .then(returnedPerson =>{
             console.log(returnedPerson)
             setPersons(persons.concat(returnedPerson))
@@ -100,7 +96,6 @@ const App = () => {
             }, 5000)
 
           })
-=======
         .then(returnedPerson => {
           console.log(returnedPerson)
           setPersons(persons.concat(returnedPerson))
@@ -111,7 +106,6 @@ const App = () => {
             setNotification(null)
           }, 5000)
         })
->>>>>>> 36f6cda21ce3cc744dca41380cfe98608af20c8d
     }
 
 
